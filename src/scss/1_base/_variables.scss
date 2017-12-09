@@ -1,0 +1,37 @@
+//
+// @file     1_base/_variables.scss
+// @parent   1_base/_all.scss
+//
+// @desc     Defines site variables like colors, fonts,
+//           headings, site width, etc
+// @usage
+//
+//
+
+/*
+ * Fonts & Typography
+ */
+@import 'https://fonts.googleapis.com/css?family=Muli:300,400,700';
+
+$a: 'a, a:link, a:visited';
+$hover: '&:hover, &:focus';
+
+$fonts-main: 'Muli', sans-serif;
+
+$headings: 'h1, h2, h3, h4, h5, h6';
+
+$h1-size: 55px;
+$h2-size: 40px;
+$h3-size: 30px;
+$h4-size: 22px;
+
+$paragraph-size: 16px;
+
+/*
+ * Colors
+ */
+$white: #FFFFFF;
+$black: #000000;
+
+// 1. Document colors
+$body-color:  #7d7d7d;
