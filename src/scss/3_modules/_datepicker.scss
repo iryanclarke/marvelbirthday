@@ -1,0 +1,32 @@
+//
+// @file     3_modules/_datepicker.scss
+// @parent   3_modules/_all.scss
+//
+// @desc     Date Picker Styling
+// @usage
+//
+//
+
+.datepicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Field Spacing
+  .field {
+    margin: 0 1em;
+  }
+
+  // Customize Select Styling
+  select {
+    font-size: 20px;
+    appearance: none;
+    background-color: transparent;
+    padding: 1em 1em 1em 0;
+    color: $white;
+
+    border: none;
+    border-bottom: 1px solid $white;
+    border-radius: 0;
+  }
+}
