@@ -24,9 +24,15 @@
     background-color: transparent;
     padding: 1em 1em 1em 0;
     color: $white;
+    cursor: pointer;
 
     border: none;
     border-bottom: 1px solid $white;
     border-radius: 0;
+    outline: none;
+  }
+
+  button {
+
   }
 }
