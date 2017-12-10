@@ -25,13 +25,13 @@ body {
   color: white;
   font-family: $fonts-main;
   width: 100wh;
-	height: 90vh;
+	height: 100vh;
 
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
-	-webkit-animation: gradient 15s ease infinite;
-	-moz-animation: gradient 15s ease infinite;
-	animation: gradient 15s ease infinite;
+	//-webkit-animation: gradient 300s ease infinite;
+	//-moz-animation: gradient 300s ease infinite;
+	//animation: gradient 300s ease infinite;
 }
 
 h1, h2, h3, h4, h5 {
@@ -50,4 +50,19 @@ h3 {
 }
 h4 {
   font-size: $h4-size;
+}
+
+button {
+  transition: .2s all linear;
+  font-family: $fonts-main;
+  color: $white;
+  background: transparent;
+  border: 2px solid $white;
+  padding: 1em 2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background: $white;
+  color: $black;
 }

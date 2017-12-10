@@ -8,11 +8,20 @@
 //
 
 
-.app {
+.App, #root {
   height: 100%;
 }
+
 
 .App-header,
 .interactive-area {
   text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+.interactive-area .column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
