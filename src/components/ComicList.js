@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ComicResult from './ComicResult';
 
 class ComicList extends Component {
-  // Render View
   render() {
     return (
       <div className="comic-results">

@@ -26,19 +26,24 @@ class ComicFinder extends Component {
   }
 
 
+  // Handle datepicker changing value,
   handleChange(date) {
     this.setState({
       birthday: date,
-      startDate: this.state.birthday.format('MM/DD/YYYY'),
-      endDate: this.state.birthday.add(1, 'days').format('MM/DD/YYYY')
+      startDate: date.format('MM/DD/YYYY'),
+      endDate: date.format('MM/DD/YYYY')
     });
   }
 
+  // Perform AJAX request using Axios
   fetchComic () {
     this.setState({
       isLoading: true,
       buttonText: 'Finding...'
     });
+
+    const bleh = this.state.birthday.format('MM/DD/YYYY');
+    console.log("Start Date: " + this.state.startDate + " End Date: " + this.state.endDate + " Datepicker date: " + bleh)
 
     axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateRange=${this.state.startDate},${this.state.endDate}&apikey=2be07e16999a2baea0054454ca1a1b3b`)
       .then(res => {
@@ -64,6 +69,7 @@ class ComicFinder extends Component {
           });
         }
       })
+      // Catch any response errors (from Axios Docs)
       .catch(function (error) {
         if (error.response) {
           // The request was made and the server responded with a status code
