@@ -12,10 +12,10 @@ class ComicResults extends Component {
   // Render View
   render() {
     return (
-      <div class="results">
-        <h1>{`This comic was released on: ${this.props.birthday}`}</h1>
+      <div className="results">
+        <h2>{`This comic was released on: ${this.props.birthday}`}</h2>
         {this.props.comics.map(comic =>
-          <h3>{comic.title}</h3>
+          <h3 id="comic.id">{comic.title}</h3>
         )}
         <h4>Featuring the characters:</h4>
 
@@ -27,7 +27,7 @@ class ComicResults extends Component {
   }
 }
 
-class BirthdayComic extends Component {
+class ComicFinder extends Component {
 
   // App Constructor
   constructor(props) {
@@ -36,9 +36,11 @@ class BirthdayComic extends Component {
     this.state = {
       comics: [],
       characters: [],
-      birthdayStart: moment(),
-      birthdayEnd: moment(),
-      showResults: false
+      birthday: moment(),
+      startDate: moment(),
+      endDate: moment(),
+      showResults: false,
+      hasResults: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -46,18 +48,15 @@ class BirthdayComic extends Component {
 
 
   handleChange(date) {
-    console.log('Date: ' + date);
-    console.log(date);
-
-    const dateString = date;
     this.setState({
-      birthdayStart: dateString,
-      birthdayEnd: dateString,
+      birthday: date,
+      startDate: this.state.birthday.format('MM/DD/YYYY'),
+      endDate: this.state.birthday.add(1, 'days').format('MM/DD/YYYY')
     });
   }
 
   fetchComic () {
-    axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateRange=${this.state.birthdayStart},${this.state.birthdayEnd}&apikey=2be07e16999a2baea0054454ca1a1b3b`)
+    axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateRange=${this.state.startDate},${this.state.endDate}&apikey=2be07e16999a2baea0054454ca1a1b3b`)
       .then(res => {
         const comics = res.data.data.results.map(obj => obj);
         this.setState({ comics });
@@ -88,21 +87,28 @@ class BirthdayComic extends Component {
   // Render View
   render() {
     return (
-      <div class="birthdaycomic">
-        <div class="interactive-area">
+      <div className="birthdaycomic">
+        <div className="interactive-area">
           <DatePicker
-              selected={this.state.birthdayStart}
+              selected={this.state.birthday}
               onChange={this.handleChange}
               showYearDropdown
-              dateFormatCalendar="YYYY/MM/DD"
           />
           <button onClick={() => this.fetchComic()}>Find it</button>
         </div>
 
-        { this.state.showResults ? <ComicResults
-          comics = {this.state.comics}
-          characters = {this.state.characters}
-          birthday = {this.state.birthdayStart} /> : null }
+        { this.state.showResults && !this.state.hasResults ?
+          <ComicResults
+            comics = {this.state.comics}
+            characters = {this.state.characters}
+            birthday = {this.state.startDate}
+          />
+          : null
+        }
+        { this.state.showResults && this.state.hasResults ?
+          <h2>We couldnt find any results for you</h2>
+          : null
+        }
       </div>
     );
   }
@@ -115,11 +121,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Your Birthday Comic</h1>
+        <header className="app-header">
+          <h1 className="app-title">Your Birthday Comic</h1>
           <h3>Want to know what comic was released on your birthday? Enter it below!</h3>
         </header>
-        <BirthdayComic />
+        <ComicFinder />
       </div>
     );
   }
