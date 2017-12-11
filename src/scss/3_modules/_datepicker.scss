@@ -7,32 +7,21 @@
 //
 //
 
-.datepicker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.react-datepicker-wrapper {
 
-  // Field Spacing
-  .field {
-    margin: 0 1em;
-  }
+  margin: 2em 0;
 
-  // Customize Select Styling
-  select {
-    font-size: 20px;
-    appearance: none;
-    background-color: transparent;
-    padding: 1em 1em 1em 0;
+  input {
+    @include font-size(20px);
+    background: transparent;
     color: $white;
-    cursor: pointer;
 
     border: none;
-    border-bottom: 1px solid $white;
-    border-radius: 0;
+    border-bottom: 2px solid $white;
     outline: none;
+
+    padding: .5em 0;
+    text-align: center;
   }
 
-  button {
-
-  }
 }

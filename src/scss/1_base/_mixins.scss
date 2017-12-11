@@ -6,3 +6,19 @@
 // @usage
 //
 //
+
+// Transition
+@mixin transition($duration: 0.2s) {
+  transition: all $duration ease-out;
+  transform-style: preserve-3d;
+}
+
+// Output rem with a px fallback
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
