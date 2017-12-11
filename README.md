@@ -38,3 +38,4 @@ Enter your birthday! If your birthday however does not have any comics released 
 > - I've set up the API keys to allow for anything on the localhost domain with a wildcard (localhost.*), so it should always work, but contact me if things aren't working and I'll add in the API key
 > - I originally wanted to expand the search dynamically to a greater date range if there were no comics released on your birthday, expanding out to a week, but I ran out of time due to moment.js issues
 > - I used gulp to run my standard preprocessor workflow, and structured things in the SMACSS architechture, even though it is a small app
+> - This was my first ever React app, and it's a bit different from VueJS but also very similar, so it was quite fun to learn! It is definitely quite different since it's not the normal javascript I'm used to
