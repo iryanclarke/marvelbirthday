@@ -1,0 +1,35 @@
+//
+// @file     2_layout/_credits.scss
+// @parent   2_layout/_all.scss
+//
+// @desc     Imports Layout Styles
+// @usage    For inputting social links
+//
+//
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1em 1em .5em 1em;
+
+  p {
+    @include font-size(12px);
+  }
+
+  img {
+    width: 20px;
+    fill: $white;
+  }
+
+  @media only screen and (max-width: 768px) {
+    background-color: white;
+    border-radius: 0 5px 0 0;
+    display: flex;
+
+    p {
+      color: $black;
+      margin: .3em .8em;
+    }
+  }
+}

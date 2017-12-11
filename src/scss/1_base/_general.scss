@@ -43,17 +43,37 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: $h1-size;
+  @include font-size($h1-size);
+
+
+  @media only screen and (max-width: 768px) {
+    @include font-size(30px);
+  }
 }
 h2 {
-  font-size: $h2-size;
+  @include font-size($h2-size);
+  font-weight: 400;
+
+  @media only screen and (max-width: 768px) {
+    @include font-size(25px);
+  }
 }
 h3 {
-  font-size: $h3-size;
+  @include font-size($h3-size);
   font-weight: 300;
+	margin-top: 0;
+
+  @media only screen and (max-width: 768px) {
+    @include font-size(20px);
+  }
 }
 h4 {
   font-size: $h4-size;
+}
+
+p {
+  @include font-size($paragraph-size);
+  font-weight: 300;
 }
 
 button {

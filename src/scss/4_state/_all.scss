@@ -6,3 +6,11 @@
 // @usage
 //
 //
+
+button.loading {
+  background: linear-gradient(-45deg, #FFFFFF, #A5CC82);
+	background-size: 400% 400%;
+	-webkit-animation: gradient .5ss ease infinite;
+	-moz-animation: gradient 5ss ease infinite;
+	animation: gradient 5ss ease infinite;
+}

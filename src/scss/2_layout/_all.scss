@@ -7,14 +7,20 @@
 //
 //
 
+@import 'credits';
 
-.App, #root {
+.app, #root {
   height: 100%;
+  overflow-y: hidden;
 }
-
-
+.app {
+  padding: 1em;
+  height: calc(100vh - 2em);
+  overflow-y: auto;
+}
 .app-header,
-.interactive-area {
+.interactive-area,
+.birthdaycomic {
   text-align: center;
   width: 100%;
   height: auto;
@@ -26,7 +32,15 @@
   align-items: center;
 }
 
-
-.results {
+.loader {
+  padding: 2em 1em;
   text-align: center;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .app {
+    padding: 1em 1em 3em;
+  }
 }
