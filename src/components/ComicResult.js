@@ -13,8 +13,7 @@ class ComicResult extends Component {
         <div className="metaData-wrapper">
           <h3>{this.props.data.title}</h3>
           <p className="description">{this.props.data.description}</p>
-          <h4>And now for some cool facts about it</h4>
-          <p className="pageCount">It was {this.props.data.pageCount} pages long</p>
+          <p className="versionMetadata">Format: {this.props.data.format} ({this.props.data.pageCount} pages)</p>
         </div>
       </div>
     );

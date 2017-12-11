@@ -1,0 +1,44 @@
+//
+// @file     1_base/_animations.scss
+// @parent   1_base/_all.scss
+//
+// @desc     Animation declaration
+// @usage    Elements with css animations
+//
+//
+
+@keyframes bumpIn {
+  0%   { transform: translateY(5%); opacity: 0; }
+  50%  { transform: translateY(-30px); opacity: 0.50;}
+  100% { transform: translateY(0%); opacity: 1; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes growIn {
+  0%   { transform: scale3d(1,1,1); opacity: 0; }
+  50%  { transform: scale3d(1.05,1.05,1.05); opacity: 0.50;}
+  100% { transform: scale3d(1,1,1); opacity: 1; }
+}
+
+@keyframes shake {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

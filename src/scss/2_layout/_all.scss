@@ -19,14 +19,16 @@
   overflow-y: auto;
 }
 .app-header,
-.interactive-area,
+.datepicker-area,
 .birthdaycomic {
   text-align: center;
   width: 100%;
   height: auto;
 }
-
-.interactive-area .column {
+.app-header {
+  padding: 1em 0 0;
+}
+.datepicker-area .column {
   display: flex;
   justify-content: center;
   align-items: center;

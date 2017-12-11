@@ -2,16 +2,10 @@
 // @file     3_modules/_comic-results.scss
 // @parent   3_modules/_all.scss
 //
-// @desc     Assigning animations to results
-// @usage
+// @desc     Assigning animations to results and styling comic result boxes
+// @usage    On successful AJAX request with comic data returned
 //
 //
-
-@keyframes bumpIn {
-  0%   { transform: translateY(5%); opacity: 0; }
-  50%  { transform: translateY(-1%); opacity: 0.50;}
-  100% { transform: translateY(0%); opacity: 1; }
-}
 
 .comic-results {
   padding: 1em 0;
@@ -31,13 +25,16 @@
   border: 1px solid $white;
   border-radius: 5px;
   text-align: left;
+  display: flex;
 
   max-width: 700px;
   width: 100%;
   margin: 1em 0;
-  padding: 1em;
-
-  display: flex;
+  padding: 1.5em;
+  color: $black;
+  background-color: $white;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+  animation: growIn 0.6s cubic-bezier(.36,.07,.19,.97) both;
 
   .thumbnail-wrapper {
     margin-right: 1.5em;
@@ -45,8 +42,18 @@
   .thumbnail-wrapper img {
     width: 150px;
   }
-
+  h3 {
+    color: $black;
+  }
   p.description {
     font-style: italic;
   }
+}
+
+.no-comics {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@for $i from 1 to 20 {
+  .comic-list .comic:nth-child(#{$i}) { animation-delay: $i * 0.15s; }
 }
