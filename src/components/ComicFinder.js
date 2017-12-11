@@ -6,11 +6,12 @@ import ComicList from './ComicList';
 
 class ComicFinder extends Component {
 
+  //
   // App Constructor
+  //
   constructor(props) {
     super(props);
 
-    // 
     this.state = {
       comics: [],
       buttonText: 'Find it!',
